@@ -9,10 +9,7 @@ namespace AndriiYefimov.SayolloHW2.Test
 {
     public class TestAppManager : MonoBehaviour
     {
-        [SerializeField] private string apiRoot = "https://6u3td6zfza.execute-api.us-east-2.amazonaws.com";
-        [SerializeField] private string workingSpace = "prod";
-        [SerializeField] private string detailsAPI = "v1/gcom/ad";
-        [SerializeField] private string purchaseConfirmAPI = "v1/gcom/action"; 
+        [SerializeField] private ApiConfig apiConfig;
         [Space]
         [SerializeField] private ConfirmPurchasePanel confirmPurchasePanel;
         [SerializeField] private TestPurchaseManager testPurchaseManager;
@@ -20,8 +17,8 @@ namespace AndriiYefimov.SayolloHW2.Test
         private PostRequestSender _postRequestSender;
         private GetRequestSender _getRequestSender;
 
-        private string DetailsAPI => $"{apiRoot}/{workingSpace}/{detailsAPI}";
-        private string PurchaseConfirmAPI => $"{apiRoot}/{workingSpace}/{purchaseConfirmAPI}";
+        private string DetailsAPI => $"{apiConfig.ApiRoot}/{apiConfig.WorkingSpace}/{apiConfig.DetailsAPI}";
+        private string PurchaseConfirmAPI => $"{apiConfig.ApiRoot}/{apiConfig.WorkingSpace}/{apiConfig.PurchaseConfirmAPI}";
 
         private void Awake()
         {
