@@ -13,6 +13,7 @@ namespace AndriiYefimov.SayolloHW2.Purchases.Views
         [Space] 
         [SerializeField] private Image itemImage;
         [SerializeField] private TMP_Text price;
+        [SerializeField] private TMP_Text title;
 
         private void Awake()
         {
@@ -62,8 +63,9 @@ namespace AndriiYefimov.SayolloHW2.Purchases.Views
         
         private void UpdateText(PurchaseItemModel itemDetails)
         {
-            var priceText = $"{itemDetails.currency_sign} {itemDetails.price} {itemDetails.currency}";
+            var priceText = $"{itemDetails.currency} {itemDetails.currency_sign}";
             SetText(price, priceText);
+            SetText(title, itemDetails.title);
         }
         
         private void SetText<T>(TMP_Text textComponent, T text)
@@ -86,7 +88,8 @@ namespace AndriiYefimov.SayolloHW2.Purchases.Views
         private void SetDefaults()
         {
             UpdateImage(null, false);
-            SetText(price, "");
+            SetText(price, string.Empty);
+            SetText(title, string.Empty);
         }
 
     }
