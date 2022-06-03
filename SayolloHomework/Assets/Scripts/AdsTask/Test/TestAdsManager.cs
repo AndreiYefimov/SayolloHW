@@ -29,7 +29,7 @@ namespace AndriiYefimov.SayolloHW.Test
         private string _videoLink = "";  /* TEST FIELD */
         private FileSaver _fileSaver;
         private FileLoader _fileLoader;
-        private RequestSender _requestSender;
+        private GetRequestSender _getRequestSender;
         private VideoFileModel _testVideoFileModel; /* TEST FIELD */
 
         private void Awake()
@@ -51,7 +51,7 @@ namespace AndriiYefimov.SayolloHW.Test
         {
             _fileSaver = new FileSaver();
             _fileLoader = new FileLoader();
-            _requestSender = new RequestSender();
+            _getRequestSender = new GetRequestSender();
         }
 
         private void AddListeners()
@@ -66,7 +66,7 @@ namespace AndriiYefimov.SayolloHW.Test
         
         private void PlayAdVideo()
         {
-            StartCoroutine(_requestSender.SendGetRequest<VAST>(apiUrl, OnGetRequestResponse));
+            StartCoroutine(_getRequestSender.SendXMLGetRequest<VAST>(apiUrl, OnGetRequestResponse));
         }
 
         private void OnGetRequestResponse(VAST response)
