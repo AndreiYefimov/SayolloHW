@@ -121,10 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ebd842cbd404a4f90fa3d8121cf7f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  apiRoot: https://6u3td6zfza.execute-api.us-east-2.amazonaws.com
-  workingSpace: prod
-  detailsAPI: v1/gcom/ad
-  purchaseConfirmAPI: v1/gcom/action
+  apiConfig: {fileID: 11400000, guid: 77363875727673242853b8cf1a579348, type: 2}
   confirmPurchasePanel: {fileID: 8314329091769193399}
   testPurchaseManager: {fileID: 8314329091194793791}
 --- !u!1 &8314329089919974041
