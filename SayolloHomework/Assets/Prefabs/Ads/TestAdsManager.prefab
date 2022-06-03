@@ -539,6 +539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playVideoButton: {fileID: 1765229363}
+  canvas: {fileID: 1358302756}
   videoController: {fileID: 2708074615716827377}
   apiUrl: https://6u3td6zfza.execute-api.us-east-2.amazonaws.com/prod/ad/vast
   videoDefaultName: myVideo.webm
