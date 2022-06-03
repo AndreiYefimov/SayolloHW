@@ -42,7 +42,7 @@ namespace AndriiYefimov.SayolloHW.Senders
             where T : class
         {
             var hasError = www.isNetworkError || www.isHttpError;
-
+            
             TryHandleError(hasError, www);
             result = TryHandleTextResult(hasError, www, result);
 

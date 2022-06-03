@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Text;
+using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Networking;
 using Debug = UnityEngine.Debug;
@@ -16,7 +17,7 @@ namespace AndriiYefimov.SayolloHW2
 
         public PostRequestSender()
         {
-            _defaultPostData = JsonUtility.ToJson(new EmptyModel());
+            _defaultPostData = JsonConvert.SerializeObject(new EmptyModel());
         }
 
         public IEnumerator SendSimplePostRequest(string requestUrl, string postData,
@@ -69,7 +70,7 @@ namespace AndriiYefimov.SayolloHW2
             if (!hasErrors && responseCallback != null)
             {
                 Debug.Log($"Result: {uwr.downloadHandler.text}");
-                var response = JsonUtility.FromJson<T>(uwr.downloadHandler.text);
+                var response = JsonConvert.DeserializeObject<T>(uwr.downloadHandler.text);
                 responseCallback.Invoke(response);
             }
         }

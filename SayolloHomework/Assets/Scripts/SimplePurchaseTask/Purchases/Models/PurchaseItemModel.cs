@@ -1,5 +1,8 @@
-﻿namespace AndriiYefimov.SayolloHW2.Models
+﻿using System;
+
+namespace AndriiYefimov.SayolloHW2.Purchases.Models
 {
+    [Serializable]
     public class PurchaseItemModel
     {
         public string title { get; set; }

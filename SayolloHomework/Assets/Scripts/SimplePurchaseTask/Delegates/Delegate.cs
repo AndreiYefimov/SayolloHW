@@ -1,10 +1,10 @@
 ﻿using System;
-using AndriiYefimov.SayolloHW2.Models;
+using AndriiYefimov.SayolloHW2.Purchases.Models;
 using UnityEngine;
 
 namespace AndriiYefimov.SayolloHW2.Delegates
 {
-    public class Delegate
+    public static class Delegate
     {
         public delegate void GetItemDetails(string itemId, Action<PurchaseItemModel> callback);
         
